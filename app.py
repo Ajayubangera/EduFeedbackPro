@@ -24,7 +24,7 @@ QUESTIONS_FILE = "questions_and_answers.json"
 
 # Gemini API endpoint and key
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-GEMINI_API_KEY = "AIzaSyBDOQdwVAvAz01D8E6a-QwTsihdn-ap3Ys"
+GEMINI_API_KEY = "AIzaSyDFcpnI7OdNGtuTJ7VpSFUVX3s8xc-Pd4I"
 
 # Load questions and answers from the file
 def load_questions():
