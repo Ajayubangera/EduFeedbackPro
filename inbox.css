@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #16213e;
+}
+
+h1 {
+    text-align: center;
+}
+
+#inbox-container {
+color:white;
+    max-width: 600px;
+    margin: auto;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+}
+
+.message-box {
+    
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Adjust width */
+    max-width: 600px;
+    text-align: center;
+}
+
+.message-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#message-details {
+    color: white;
+    
+    max-width: 600px;
+    margin: auto;
+    background: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(2, 203, 225, 0.1);
+    margin-bottom: 20px;
+}
+#reply-message {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+button {
+    padding: 10px 20px;  /* Adjust padding for a more clickable size */
+    margin: 20px auto;   /* Centers the button */
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+    width: auto;  /* Ensures the button size matches the text */
+    text-align: center; /* Centers text inside the button */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+button {
+    padding: 10px 15px;
+    margin: 5px auto;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+h1 {
+    color: #4ecca3;
+    text-align: center;
+}
+
+
+
+.read { color: green; }
+.unread { color: red; }

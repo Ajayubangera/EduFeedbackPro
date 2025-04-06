@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="students_list.css">
+
+</head>
+<body class="bg-dark text-light">
+    <div class="container mt-5">
+        <h2 class="text-center">Student List</h2>  
+        <table class="table table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>SL No</th>
+                    <th>Name</th>
+                    <th>Submitted</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable">
+                <!-- Student data will be inserted here -->
+            </tbody>
+        </table><br>
+        <a href="teacher_dashboard.html" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+
+    <script>
+       async function fetchStudents() {
+    try {
+        const response = await fetch("http://127.0.0.1:5000/get_total_students"); // ✅ Update API URL
+        if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
+
+        const students = await response.json();
+        let studentTable = document.getElementById("studentTable");
+        studentTable.innerHTML = "";
+
+        students.forEach((student, index) => {
+            let row = `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${student.name}</td>
+                    <td>
+                        ${student.submitted === "Yes" 
+                            ? '<span class="badge bg-success">Submitted</span>' 
+                            : '<span class="badge bg-danger">Not Submitted</span>'}
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="deleteStudent('${student.name}')">Delete</button>
+                    </td>
+                </tr>
+            `;
+            studentTable.innerHTML += row;
+        });
+
+    } catch (error) {
+        console.error("❌ Error fetching students:", error);
+        alert("Error fetching student data.");
+    }
+}
+
+
+        async function deleteStudent(name) {
+            if (confirm(`Are you sure you want to delete ${name}?`)) {
+                try {
+                    const response = await fetch("http://127.0.0.1:5000/delete_student", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name: name }) 
+                    });
+
+                    const result = await response.json();
+                    console.log("✅ API Response:", result);
+
+                    if (response.ok) {
+                        alert(result.message);
+                        fetchStudents(); // Refresh student list
+                    } else {
+                        throw new Error(result.error || "Unknown error");
+                    }
+                } catch (error) {
+                    console.error("❌ Error deleting student:", error);
+                    alert("❌ Failed to delete student. Check console for details.");
+                }
+            }
+        }
+
+        fetchStudents();
+    </script>
+</body>
+</html>

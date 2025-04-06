@@ -1,0 +1,82 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #1a1a2e; /* Dark background for a modern look */
+    color: #ed0000; /* Light text for readability */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  h2 {
+    font-size: 2.8rem;
+    color: #4ecca3; /* Accent color for the heading */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Input file styles */
+  input[type="file"] {
+    display: block;
+    margin: 15px 0;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #16213e; /* Darker input background */
+    border: 2px solid #4ecca3; /* Accent border */
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="file"]:hover {
+    border-color: #36b289; /* Slightly lighter border on hover */
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0a0a0f; /* Dark text for contrast */
+    background-color: #00ffaa; /* Accent button color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #055e40; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
+  }
+  
+  /* Add spacing between elements */
+  input,
+  button {
+    margin-bottom: 15px;
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    input[type="file"],
+    button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  }

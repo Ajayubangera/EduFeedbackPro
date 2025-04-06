@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reply to Message</title>
+  <link rel="stylesheet" href="inbox.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Reply to Message</h1>
+    <button class="go-back-btn" onclick="goBack()">Go Back</button>
+  </header>
+  
+  <main class="content">
+    <section class="reply-section">
+      <h2>Message Details</h2>
+      <p><strong>From:</strong> <span id="messageSender"></span></p>
+      <p><strong>Email:</strong> <span id="messageEmail"></span></p>
+      <p><strong>Message:</strong> <span id="messageText"></span></p>
+      
+      <h2>Reply</h2>
+      <textarea id="replyMessage" placeholder="Type your reply here..."></textarea>
+      <button onclick="sendReply()">Send Reply</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Teacher Dashboard</p>
+  </footer>
+
+  <script src="reply.js"></script>
+</body>
+</html>

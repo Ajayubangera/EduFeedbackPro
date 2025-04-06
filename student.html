@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="student.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Student Portal</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" id="homeBtn">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" class="nav-link" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h1 id="welcomeMessage">Welcome, Student!</h1>
+            <p id="dateTime">Loading...</p>
+        </section>
+
+        <!-- Quick Access Sections -->
+        <div class="quick-access">
+            <div class="card" onclick="redirectToAssignments()">
+                <i class="fas fa-tasks"></i>
+                <h3>Assignments</h3>
+                <p>View and submit assignments</p>
+            </div>
+            <div class="card" onclick="redirectToGrades()">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Grades</h3>
+                <p>Check your academic performance</p>
+            </div>
+            <div class="card" onclick="redirectToContact()">
+                <i class="fas fa-envelope"></i>
+                <h3>Contact Teacher</h3>
+                <p>Send a message to your instructor</p>
+            </div>
+            <div class="card" onclick="redirectToResources()">
+                <i class="fas fa-book"></i>
+                <h3>Resources</h3>
+                <p>Access study materials</p>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <span class="activity-icon"><i class="fas fa-file-upload"></i></span>
+                    <div class="activity-details">
+                        <p>Mathematics Assignment Submitted</p>
+                        <small>2 hours ago</small>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon"><i class="fas fa-comment"></i></span>
+                    <div class="activity-details">
+                        <p>New Message from Teacher</p>
+                        <small>4 hours ago</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Overview -->
+        <section class="academic-overview">
+            <h2>Academic Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>GPA</h3>
+                    <p>3.75</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Total Credits</h3>
+                    <p>45</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Courses</h3>
+                    <p>8 Active</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="student.js"></script>
+</body>
+</html>

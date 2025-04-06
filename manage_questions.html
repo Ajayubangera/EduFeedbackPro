@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Questions</title>
+  <link rel="stylesheet" href="manage_questions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      background-color: black;
+      color: #4ecca3;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .home-btn:hover {
+      background-color: #12122b;
+    }
+  </style>
+</head>
+<body>
+  <a href="teacher_dashboard.html" class="home-btn">
+    <i class="fas fa-home"></i> Home
+</a>
+
+  <header class="header">
+    <h1>Manage Questions and Answers</h1>
+  </header>
+  <main class="content">
+    <form id="questionForm">
+      <div id="questionFields">
+        <!-- Dynamic question fields will be added here -->
+        <div class="question-field">
+          <label for="question">Question:</label>
+          <input type="text" class="question" placeholder="Enter the question" required>
+
+          <label for="answer">Answer:</label>
+          <input type="text" class="answer" placeholder="Enter the answer" required>
+        </div>
+      </div>
+      <button type="button" onclick="addQuestionField()">Add Another Question</button>
+    </form>
+
+    <section class="questions-section">
+      <h2>Current Questions</h2>
+      <ul id="questionsList">
+        <!-- Questions will be dynamically loaded here -->
+      </ul>
+    </section>
+
+    <button class="save-btn" onclick="saveQuestions()">Save Changes</button>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Manage Questions</p>
+  </footer>
+  <script src="manage_questions.js"></script>
+</body>
+</html>

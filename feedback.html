@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message View</title>
+    <link rel="stylesheet" href="inbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .home-btn {
+          position: absolute;
+          top: 20px;
+          right: 15px;
+          background-color: black;
+          color: #4ecca3;
+          border: none;
+          padding: 10px 15px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          text-decoration: none;
+        }
+    
+        .home-btn:hover {
+          background-color: #12122b;
+        }
+      </style>
+</head>
+<body>
+    <a href="inbox.html" class="home-btn">back to inbox
+    </a><br>
+    <h1>Message Details</h1>
+    <div id="message-details"></div>
+    <textarea id="reply-message" placeholder="Type your reply here..."></textarea>
+    <button onclick="sendReply()">Send Reply</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const messageId = urlParams.get("id");
+
+        async function fetchMessage() {
+            try {
+                const response = await fetch(`http://localhost:3000/messages/${messageId}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    const msg = data.message;
+                    document.getElementById("message-details").innerHTML = `
+                        <p><strong>Name:</strong> ${msg.name}</p>
+                        <p><strong>Email:</strong> ${msg.email}</p>
+                        <p><strong>Message:</strong> ${msg.message}</p>
+                        <p>Status: <span class="${msg.read ? 'read' : 'unread'}">${msg.read ? 'Read' : 'Not Read'}</span></p>
+                    `;
+                } else {
+                    alert("Failed to load message.");
+                }
+            } catch (error) {
+                console.error("Error fetching message:", error);
+            }
+        }
+
+        async function sendReply() {
+            const replyText = document.getElementById("reply-message").value.trim();
+            if (!replyText) {
+                alert("Reply cannot be empty!");
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:3000/messages/reply/${messageId}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ reply: replyText })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert("Reply sent successfully!");
+                    window.location.href = "inbox.html";
+                } else {
+                    alert("Failed to send reply.");
+                }
+            } catch (error) {
+                console.error("Error sending reply:", error);
+            }
+        }
+
+        fetchMessage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EduConnect</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="container register-theme">
+        <a href="main.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+        
+        <div class="logo-container">
+            <i class="fas fa-user-plus logo-icon"></i>
+            <h2>Create Account</h2>
+        </div>
+
+        <div id="registerForm" class="form-container">
+            <div id="regError" class="error-message"></div>
+            
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="regUsername" placeholder="Username" required>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="regEmail" placeholder="Email Address" required>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <i class="fas fa-eye-slash toggle-password" onclick="togglePasswordVisibility(this)"></i>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+                <i class="fas fa-eye-slash toggle-password" onclick="togglePasswordVisibility(this)"></i>
+            </div>
+
+            <div class="role-selector">
+                <label>Register as:</label>
+                <div class="role-options">
+                    <label class="role-option">
+                        <input type="radio" name="regRole" value="teacher">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Teacher</span>
+                    </label>
+                    <label class="role-option">
+                        <input type="radio" name="regRole" value="student" checked>
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Student</span>
+                    </label>
+                </div>
+            </div>
+
+            <button onclick="register()" class="register-btn">
+                <span>Register</span>
+         
+                <i class="fas fa-user-plus"></i>
+            </button>
+
+            
+        </div>
+
+       
+    </div>
+
+    <div class="particles-container" id="particles"></div>
+
+    <script src="authentication.js"></script>
+    <script src="animation.js"></script>
+</body>
+</html>
