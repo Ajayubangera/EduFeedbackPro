@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials</title>
+    <link rel="stylesheet" href="resource.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Study Materials</div>
+        <div class="nav-links">
+            <a href="student.html" class="nav-link" id="homeBtn">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" class="nav-link" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </nav>
+
+    <!-- Resources Container -->
+    <div class="resources-container">
+        <h1>Study Materials Library</h1>
+
+        <div class="resources-grid">
+            <div class="resource-category" data-category="mathematics">
+                <i class="fas fa-calculator"></i>
+                <h3>Mathematics</h3>
+                <ul id="mathResources" class="resource-list"></ul>
+            </div>
+
+            <div class="resource-category" data-category="science">
+                <i class="fas fa-flask"></i>
+                <h3>Science</h3>
+                <ul id="scienceResources" class="resource-list"></ul>
+            </div>
+
+            <div class="resource-category" data-category="literature">
+                <i class="fas fa-book-open"></i>
+                <h3>Literature</h3>
+                <ul id="literatureResources" class="resource-list"></ul>
+            </div>
+
+            <div class="resource-category" data-category="computer-science">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Computer Science</h3>
+                <ul id="computerScienceResources" class="resource-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="resource.js"></script>
+</body>
+</html>

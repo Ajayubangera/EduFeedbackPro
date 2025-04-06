@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Student List</title>
+    <link rel="stylesheet" href="students.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .home-btn {
+          position: absolute;
+          top: 25px;
+          right: 15px;
+          background-color: #4ecca3;
+          color: black;
+          border: none;
+          padding: 15px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          text-decoration: none;
+        }
+    
+        .home-btn:hover {
+          background-color: #4ecca3;
+        }
+      </style>
+</head>
+<body><a href="teacher_dashboard.html" class="home-btn">
+    <i class="fas fa-home"></i> Home
+</a>
+    <h2>Upload Student List (Excel or PDF)</h2>
+    <input type="file" id="fileInput" accept=".xlsx, .xls, .pdf">
+    <button onclick="uploadFile()">Upload</button>
+
+    <script>
+        function uploadFile() {
+            let fileInput = document.getElementById("fileInput").files[0];
+            if (!fileInput) {
+                alert("Please select a file!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput);
+
+            fetch("http://127.0.0.1:5005/upload_file", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || "Upload successful!");
+                console.log(data);
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>

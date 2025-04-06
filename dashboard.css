@@ -1,0 +1,189 @@
+:root {
+    --bg-primary: #1a1a2e; /* Dark background */
+    --bg-secondary: #ffffff;
+    --nav-bg: rgba(15, 15, 26, 0.95);
+    --card-bg: #16213e; /* Darker shade for cards */
+    --text-primary: #ffffff;
+    --text-secondary: #4ecca3; /* Accent color */
+    --accent-primary: #00ffaa; /* Greenish accent */
+    --accent-secondary: #36b289; /* Hover effect */
+    --border-light: #4ecca3;
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.admin-dashboard {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 0;
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+#signOutBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-primary);
+    color: #0a0a0f;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.4s ease;
+    font-weight: bold;
+}
+
+#signOutBtn:hover {
+    background-color: var(--accent-secondary);
+    transform: scale(1.05);
+}
+
+#signOutBtn:active {
+    transform: scale(0.95);
+}
+
+
+.search-container {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.search-container input {
+    width: 50%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--border-light);
+    background-color: var(--card-bg);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-container input:hover,
+.search-container input:focus {
+    border-color: var(--accent-primary);
+}
+
+.table-container {
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid var(--border-light);
+}
+
+table th {
+    background-color: var(--nav-bg);
+    color: var(--text-primary);
+}
+
+table td {
+    background-color: var(--card-bg);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--accent-primary);
+    color: #0a0a0f;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-secondary);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input, button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .search-container input {
+        width: 80%;
+    }
+}

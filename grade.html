@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Performance</title>
+    <link rel="stylesheet" href="grade.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Student Portal</div>
+        <div class="nav-links">
+            <a href="student.html" class="nav-link" id="homeBtn">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="studentlogin.html" class="nav-link" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Academic Performance Container -->
+    <div class="performance-container">
+        <h1>Academic Performance</h1>
+
+        <!-- Overall Performance Summary -->
+        <section class="performance-summary">
+            <div class="summary-card">
+                <h2>Overall Performance</h2>
+                <div class="summary-details">
+                    <div class="summary-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h3>GPA</h3>
+                            <p>3.75</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h3>Total Credits</h3>
+                            <p>45</p>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <h3>Performance Trend</h3>
+                            <p>Improving</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Course Grades -->
+        <section class="course-grades">
+            <h2>Course Grades</h2>
+            <div class="grades-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Grade</th>
+                            <th>Credits</th>
+                            <th>Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gradesTableBody">
+                        <!-- Grades will be dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Performance Trend Chart -->
+        <section class="performance-chart">
+            <h2>Academic Performance Trend</h2>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Semester Breakdown -->
+        <section class="semester-breakdown">
+            <h2>Semester Breakdown</h2>
+            <div class="semester-grid" id="semesterBreakdown">
+                <!-- Semester details will be dynamically populated -->
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="grade.js"></script>
+</body>
+</html>

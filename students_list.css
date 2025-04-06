@@ -1,0 +1,161 @@
+:root {
+    --bg-primary: #1a1a2e; /* Dark background */
+    --bg-secondary: #ffffff;
+    --nav-bg: rgba(15, 15, 26, 0.95);
+    --card-bg: #16213e; /* Darker shade for cards */
+    --text-primary: #ffffff;
+    --text-secondary: #4ecca3; /* Accent color */
+    --accent-primary: #00ffaa; /* Greenish accent */
+    --accent-secondary: #36b289; /* Hover effect */
+    --border-light: #4ecca3;
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Back to Dashboard Button - Positioned in the Top Right Corner */
+.back-to-dashboard {
+    position: fixed; /* Stays in place even when scrolling */
+    top: 20px;
+    right: 20px; /* Move to the top-right */
+    background-color: var(--accent-primary);
+    color: #0a0a0f;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.back-to-dashboard:hover {
+    background-color: var(--accent-secondary);
+    transform: scale(1.05);
+}
+
+.back-to-dashboard:active {
+    transform: scale(0.95);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-xl);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s ease infinite;
+}
+
+.table {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid var(--border-light);
+}
+
+.table th {
+    background-color: var(--nav-bg);
+    color: var(--text-secondary);
+}
+
+.table td {
+    background-color: var(--card-bg);
+}
+
+.badge {
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: var(--accent-primary);
+    color: #0a0a0f;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #ed0000;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c00000;
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: #0a0a0f;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-secondary);
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    /* Adjust Back to Dashboard Button for Small Screens */
+    .back-to-dashboard {
+        top: 10px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

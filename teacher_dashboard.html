@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="teacher_dashboard.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">EdufeedbackPRO</div>
+        <nav>
+            <button class="home-btn" onclick="goHome()">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Dashboard Menu</h2>
+            <ul>
+                <li><button onclick="redirectToUpload()">
+                    <i class="fas fa-upload"></i> Upload Assignment
+                </button></li>
+                <li><button onclick="redirectToInbox()">
+                    <i class="fas fa-inbox"></i> Inbox
+                </button></li>
+                <li><button onclick="redirectToGrades()">
+                    <i class="fas fa-chart-bar"></i> View Grades
+                </button></li>
+                <li><button onclick="redirectToStudentsName()">
+                    <i class="fas fa-user-plus"></i> Upload Students Name
+                </button></li>
+                <li><button onclick="redirectToManageStudents()">
+                    <i class="fas fa-users"></i> Manage Students
+                </button></li>
+            </ul>
+        </aside>
+
+        <section class="main-content">
+            <h1 id="welcomeMessage">Welcome, <span id="teacherName">Teacher</span></h1>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Retrieve teacher's name from sessionStorage
+                    const teacherName = sessionStorage.getItem("teacherName") || "Teacher"; // Default to "Teacher"
+
+                    // Get current hour
+                    const hour = new Date().getHours();
+                    let greeting;
+
+                    if (hour < 12) greeting = "Good Morning";
+                    else if (hour < 18) greeting = "Good Afternoon";
+                    else greeting = "Good Evening";
+
+                    // Update the welcome message
+                    document.getElementById("welcomeMessage").innerHTML = `${greeting}, <span id="teacherName">${teacherName}</span><br>Welcome to your teacher dashboard`;
+                });
+            </script>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p id="total-students">Loading...</p>
+                </div>
+                <div class="card">
+                     <h3>Assignments Pending</h3>
+                     <p id="pending-assignments">Loading...</p>
+                </div> 
+                <div class="card">
+                    <h3>Recent Inbox</h3>
+                    <p id="new-messages">Loading...</p>
+                </div>  
+            </div>
+
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <ul>
+                    <li>
+                        <span>Math Assignment Uploaded</span>
+                        <small>2 hours ago</small>
+                    </li>
+                    <li>
+                        <span>Science Grades Submitted</span>
+                        <small>4 hours ago</small>
+                    </li>
+                    <li>
+                        <span>New Student Registered</span>
+                        <small>Yesterday</small>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 EdufeedbackPRO | Teacher Dashboard</p>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="teacher_dashboard.js"></script>
+</body>
+</html>

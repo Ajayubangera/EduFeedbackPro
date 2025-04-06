@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Teacher</title>
+  <link rel="stylesheet" href="contact_teacher.css">
+</head>
+<body>
+  <button class="go-back-btn" onclick="history.back()">Go Back</button>
+
+  <header class="header">
+    <h1>Contact Your Teacher</h1>
+  </header>
+  <main class="content">
+    <form id="contactForm">
+      <label for="name"><strong>Your Name:</strong></label>
+      <input type="text" id="name" name="name" readonly required>  <!-- Name is now read-only -->
+
+      <label for="email"><strong>Your Email:</strong></label>
+      <input type="email" id="email" name="email" readonly required>  <!-- Email is also read-only -->
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <script src="contact_teacher.js"></script>
+</body>
+</html>
